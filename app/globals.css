@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* This is your LIGHT THEME */
+  :root {
+    --background: 350 100% 99%;
+    --foreground: 274 25% 25%;
+    --card: 0 0% 100%;
+    --card-foreground: 274 25% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 274 25% 25%;
+    --primary: 270 90% 88%;
+    --primary-foreground: 274 25% 15%;
+    --secondary: 250 80% 92%;
+    --secondary-foreground: 274 25% 15%;
+    --muted: 250 20% 95%;
+    --muted-foreground: 250 20% 45%;
+    --accent: 270 90% 92%;
+    --accent-foreground: 274 25% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 250 50% 92%;
+    --input: 250 50% 92%;
+    --ring: 270 90% 80%;
+    --radius: 0.5rem;
+  }
+
+  /* This is your DARK THEME */
+  .dark {
+    --background: 274 25% 12%;
+    --foreground: 0 0% 98%; /* Main text is white */
+
+    --card: 274 25% 18%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 274 25% 18%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 270 90% 88%;
+    --primary-foreground: 274 25% 15%;
+
+    --secondary: 250 80% 92%;
+    --secondary-foreground: 274 25% 15%;
+
+    --muted: 274 25% 25%;
+    --muted-foreground: 0 0% 98%; /* Muted text is also white */
+
+    --accent: 270 90% 92%;
+    --accent-foreground: 274 25% 15%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 274 25% 25%;
+    --input: 274 25% 25%;
+    --ring: 270 90% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.hero-image-wrapper {
+  perspective: 1000px;
+}
+
+.hero-image {
+  transform: rotateX(15deg) scale(1);
+  transition: transform 0.5s ease-out;
+  will-change: transform;
+}
+
+.hero-image.scrolled {
+  transform: rotateX(0deg) scale(1) translateY(40px);
+}
